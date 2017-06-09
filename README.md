@@ -9,10 +9,10 @@ Original Project = https://github.com/LLK/scratchx
 # 如何使用?
 
 下載並解壓縮後  
-直接執行 StartServer.bat  
+直接執行 `StartServer.bat`  
 會自動開啟瀏覽器並進入頁面
 
-※註:不要把開啟的命令提示字元關掉，那是網頁伺服器
+_註:不要把開啟的命令提示字元關掉，那是網頁伺服器_
 
 # 別的電腦可以連我們用StartServer.bat建立的網站嗎?
 
