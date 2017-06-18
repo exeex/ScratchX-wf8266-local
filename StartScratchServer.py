@@ -12,14 +12,20 @@ def run_server(server_class=http.server.HTTPServer, handler_class=http.server.Si
     server_address = ('', 8000)
     httpd = server_class(server_address, handler_class)
     print("running scratch...")
-
-    ip = socket.gethostbyname(socket.gethostname())
+    try:
+        ip = socket.gethostbyname(socket.gethostname())
+    except:
+        ip = "127.0.0.1"
     webbrowser.open("http://"+ip+":8000", new=0, autoraise=True)
     httpd.serve_forever()
 
+try:
+    ip = socket.gethostbyname(socket.gethostname())
+except:
+    ip = "127.0.0.1"
 
-ip = socket.gethostbyname(socket.gethostname())
 url = "http://{}:8000".format(ip)
+
 try:
     ret = requests.get(url)
 except:
