@@ -3,7 +3,7 @@
 import http.server
 import webbrowser
 import socket
-import requests
+import urllib.request
 import queue
 
 Handler = http.server.SimpleHTTPRequestHandler
@@ -27,11 +27,11 @@ except:
 url = "http://{}:8000".format(ip)
 
 try:
-    ret = requests.get(url)
+    ret = urllib.request.urlopen(url)
 except:
-    ret = None
+    ret = 0
 
-if ret != None:
+if ret != 0 & ret.status == 200:
     webbrowser.open(url, new=0, autoraise=True)
 else:
     run_server(server_class = http.server.HTTPServer, handler_class = Handler)
